@@ -1,0 +1,63 @@
+/* QR Image */
+#reader__scan_region img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 10rem; /* w-40 */
+    height: 10rem; /* h-40 */
+    margin-bottom: 1.5rem; /* mb-6 */
+  }
+  
+  /* Start Camera Button */
+  #reader__dashboard_section_csr button {
+    background-color: #0ea5e9; /* primary-500 */
+    color: white;
+    padding: 0.5rem 1rem; /* py-2 px-4 */
+    border-radius: 0.5rem; /* rounded-lg */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease-in-out;
+    
+  }
+  
+  #reader__dashboard_section_csr button:hover {
+    background-color: #0284c7; /* primary-600 */
+  }
+  
+  /* Choose File Button */
+  #html5-qrcode-button-file-selection {
+    background-color: #0ea5e9; /* primary-500 */
+    color: white;
+    padding: 0.5rem 1rem; /* py-2 px-4 */
+    border-radius: 0.5rem; /* rounded-lg */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  #html5-qrcode-button-file-selection:hover {
+    background-color: #0284c7; /* primary-600 */
+  }
+  
+  /* File Input */
+  #reader__dashboard_section input {
+    background-color: #64748b; /* secondary-500 */
+    color: white;
+    padding: 0.5rem 1rem; /* py-2 px-4 */
+    border-radius: 0.5rem; /* rounded-lg */
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  #reader__dashboard_section input:hover {
+    background-color: #475569; /* secondary-600 */
+  }
+  
+  /* Centering Button Container */
+  #reader__dashboard_section_csr > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
