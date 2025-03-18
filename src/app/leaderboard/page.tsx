@@ -1,6 +1,6 @@
 "use client"
 
-import LeaderboardPage from '@/components/containers/leaderboard-page'
+import LeaderboardPage from '@/containers/leaderboard-page'
 import { DashboardLayout } from '@/components/layout'
 import React from 'react'
 

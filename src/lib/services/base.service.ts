@@ -1,3 +1,5 @@
+"use client"
+
 import { useAccessToken } from "@/store";
 import { getClientApi } from "../utils";
 

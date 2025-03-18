@@ -1,3 +1,5 @@
+"use client"
+
 import { EErrorMessage } from "@/enums";
 import { getClientApi } from "@/lib/utils";
 import { TLoginFormData } from "@/types";

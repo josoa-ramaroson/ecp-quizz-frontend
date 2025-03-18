@@ -1,3 +1,5 @@
+"use client"
+
 import { TPersonalStats } from "@/types";
 import { BaseService } from "./base.service";
 

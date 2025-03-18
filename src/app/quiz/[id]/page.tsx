@@ -1,5 +1,5 @@
 "use client"
-import QuizPage from '@/components/containers/quiz-page';
+import QuizPage from '@/containers/quiz-page';
 import { DashboardLayout } from '@/components/layout';
 import { checkFirstLogin, withAuth } from '@/lib/hoc';
 

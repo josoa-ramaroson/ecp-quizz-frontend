@@ -1,5 +1,5 @@
 "use client"
-import { HomePage } from '@/components/containers'
+import { HomePage } from '@/containers'
 import { DashboardLayout } from '@/components/layout';
 import { checkFirstLogin, withAuth } from '@/lib/hoc'
 

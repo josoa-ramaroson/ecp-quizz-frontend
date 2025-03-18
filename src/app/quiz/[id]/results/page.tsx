@@ -1,5 +1,5 @@
 "use client"
-import { QuizResultpage } from '@/components';
+import QuizResultpage from '@/containers/quiz-result-page';
 import { DashboardLayout } from '@/components/layout'
 import { withAuth } from '@/lib/hoc'
 import React from 'react'

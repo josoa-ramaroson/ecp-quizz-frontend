@@ -1,3 +1,4 @@
+"use client"
 
 import { IQuiz } from "@/interfaces/quiz.interface";
 import { TEvaluateQuizDto, TEvaluationsResponse } from "@/types";

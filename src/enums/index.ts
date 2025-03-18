@@ -1,3 +1,5 @@
+"use client"
+
 export * from "./local-storage-key.enum";
 export * from "./error-message.enum";
 export * from "./button-size.enum";

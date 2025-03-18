@@ -112,7 +112,7 @@ export default function ProfilePage({ isPopupOpen = false }: TProfilePage) {
                     </DialogTitle>
                     {isPopupOpen && 
                       <CardDescription className="text-center mt-2">
-                        <p className="mb-2">We're excited to have you join our community! 🎉</p>
+                        <p className="mb-2">We&apos;re excited to have you join our community! 🎉</p>
                         <p>Complete your profile information to enhance your experience and connect with fellow English learners. 
                         This will help us personalize your quizzes and show your achievements on the leaderboard.</p>
                       </CardDescription>

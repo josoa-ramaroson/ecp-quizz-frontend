@@ -7,7 +7,7 @@ export function useGeneratePseudo() {
     const generatePseudo = useCallback( () => {
         try {
             const randomName = uniqueNamesGenerator({
-                dictionaries: [adjectives, animals], // Generates names like "SillyPenguin"
+                dictionaries: [colors,adjectives, animals], // Generates names like "SillyPenguin"
                 length: 2,                          // You can adjust the number of parts in the name
                 separator: '',                      // No separator, just combine words (can use '-' for hyphenated names)
                 style: 'capital',                   // Capitalizes the first letter of each part

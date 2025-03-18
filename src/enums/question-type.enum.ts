@@ -1,4 +1,4 @@
-
+"use client"
 export enum EQuestionType {
     MULTIPLE_CHOICE = "MULTIPLE_CHOICE",
     SINGLE_CHOICE = "SINGLE_CHOICE",

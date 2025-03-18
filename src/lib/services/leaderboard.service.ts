@@ -1,3 +1,5 @@
+"use client"
+
 import { TLeaderboardData } from "@/types";
 import { BaseService } from "./base.service";
 

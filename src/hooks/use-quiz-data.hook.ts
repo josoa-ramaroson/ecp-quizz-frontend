@@ -1,3 +1,5 @@
+"use client"
+
 import { IQuiz } from "@/interfaces";
 import { QuizzesService } from "@/lib/services";
 import { useState, useEffect } from "react";

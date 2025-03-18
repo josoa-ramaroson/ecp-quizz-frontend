@@ -1,5 +1,5 @@
 "use client"
-import { LoginPage } from '@/components'
+import { LoginPage } from '@/containers'
 import { useAccessToken } from '@/store';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';

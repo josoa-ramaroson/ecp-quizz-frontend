@@ -1,3 +1,4 @@
+"use client"
 
 import { StatsService } from "@/lib/services";
 import { TPersonalStats } from "@/types";

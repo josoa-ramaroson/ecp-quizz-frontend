@@ -1,5 +1,5 @@
 "use client"
-import { ConfirmInformationPage } from '@/components'
+import ConfirmInformationPage  from '@/containers/confirm-information-page'
 import { DashboardLayout } from '@/components/layout'
 import { withAuth } from '@/lib/hoc'
 import React from 'react'

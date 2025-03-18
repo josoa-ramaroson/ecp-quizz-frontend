@@ -1,3 +1,5 @@
+"use client"
+
 import { TEditProfileDto } from "@/types";
 import { BaseService } from "./base.service";
 

@@ -1,3 +1,5 @@
+"use client"
+
 import { EQuizStatus } from "@/enums"
 import { IQuiz } from "@/interfaces"
 import { useMemo } from "react"
