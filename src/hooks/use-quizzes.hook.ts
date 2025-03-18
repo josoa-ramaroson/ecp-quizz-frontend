@@ -42,13 +42,13 @@ export function useQuizzes() {
 
  
 
-    useEffect(() => {
-        fetchQuizzes();
-    }, [fetchQuizzes]);
+    // useEffect(() => {
+    //     fetchQuizzes();
+    // }, [fetchQuizzes]);
 
-    useEffect(() => {
-        fetchDailyQuiz();
-    }, [fetchDailyQuiz]);
+    // useEffect(() => {
+    //     fetchDailyQuiz();
+    // }, [fetchDailyQuiz]);
 
   
     return {
