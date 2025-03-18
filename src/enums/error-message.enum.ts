@@ -13,4 +13,5 @@ export enum EErrorMessage {
     INTERNAL_SERVER_ERROR = "Internal server error - Try again later",  
 
     UNKOWN_ERROR = "An unknown error occurred",
+    NO_DAILY_QUIZ_TODAY = "No daily quiz today.",
 }

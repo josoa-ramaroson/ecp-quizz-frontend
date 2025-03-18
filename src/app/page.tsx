@@ -1,9 +1,9 @@
 "use client"
 
-import { HomePage } from "@/containers";
+import { WelcomePage } from "@/components";
 
 export default function Home() {
   return (
-    <HomePage />
+    <WelcomePage />
   );
 }

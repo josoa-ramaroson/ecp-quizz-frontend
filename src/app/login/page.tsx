@@ -1,27 +1,27 @@
 "use client"
-import { LoginPage } from '@/containers'
-import { AuthServices } from '@/services'
-import { useTokenStore } from '@/store';
-import { TLoginFormData } from '@/types'
+import { LoginPage } from '@/components'
+import { useAccessToken } from '@/store';
 import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
+import { Toaster } from 'react-hot-toast';
+
 
 export default function Page() {
-
-  const authServices = AuthServices.getInstance();
-  const setAccessToken = useTokenStore((state) => state.setAccessToken);
-  const handleOneLogin = async (loginFormData: TLoginFormData): Promise<void> => {
-    
-    try {
-      const token = await authServices.login(loginFormData);
-      setAccessToken(token);
-    } catch (error: any) {
-        throw error;
-    }
-    
-  }
+  const router = useRouter();
+  const { accessToken, verifyAccessToken } = useAccessToken(); // Get auth token from zustand store
+  useEffect(() => {
+      if (verifyAccessToken()) {
+        router.replace("/home"); // Redirect to login if not authenticated
+      } 
+  }, 
+  [router, accessToken]);
+  
+  
   return (
+    <>
     <LoginPage 
-      onLogin={handleOneLogin}
     />
+    <Toaster toastOptions={{duration: 2000}}/>
+    </>
   )
 }

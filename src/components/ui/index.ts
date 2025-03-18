@@ -1,13 +1,11 @@
-import Card from "./card";
-import Button from "./button";
+import Card from "./custom-card";
 import Footer from "./footer";
 import Heading from "./heading";
-import Input from "./input";
+import Input from "./custom-input";
 import { Divider } from "./divider";
 
 
-export { 
-    Button, 
+export {
     Card,
     Heading,
     Footer,
