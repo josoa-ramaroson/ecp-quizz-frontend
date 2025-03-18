@@ -11,7 +11,7 @@ export class AuthService {
         try {
             const api = getClientApi();
             const response = await api.post(
-                "auth/login",
+                "auth/member/sign-in",
                 loginData
             );
             

@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import React, { useState } from 'react'
 import { ArrowRight, User } from 'lucide-react';
 import { TLoginFormData } from '@/types';
-import {  Input} from '@/components';
+import { Input } from '@/components';
 import PasswordInput from './password-input';
 import { Button } from '@/components/ui/button';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
@@ -28,14 +28,23 @@ export default function LoginForm(
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const handleSubmitWithState = async (e: React.FormEvent) => {
+    e.preventDefault(); // Prevent default form submission
     setIsSubmitting(true);
-    handleSubmit(e);
-    setIsSubmitting(false);
+    try {
+      await handleSubmit(e); // Ensure the async operation completes
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  if (isSubmitting) {
+    return <LoadingSpinner className="flex justify-center items-center h-20" />;
   }
+
   return (
     <form
         onSubmit={handleSubmitWithState}
-        className={clsx("space-y-6",className)}>
+        className={clsx("space-y-6", className)}>
         <Input 
           id='pseudo'
           value={loginFormData.pseudo}
@@ -57,8 +66,7 @@ export default function LoginForm(
           disabled={isSubmitting}
           className={cn('w-full', {"opacity-50": isSubmitting})}
         >
-          { isSubmitting && <LoadingSpinner /> && <ArrowRight className="w-5 h-5" />}
-          
+          <ArrowRight className="w-5 h-5" />
           Continue to Quiz
         </Button>
     </form>
