@@ -23,7 +23,7 @@ export default function ProfilePage({ isPopupOpen = false }: TProfilePage) {
   // Add client-side mounted state
   const [isMounted, setIsMounted] = useState(false);
   const [isEditOpen, setIsEditOpen] = useState(isPopupOpen);
-  
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { personalStats } = usePersonalStats();
 
   useEffect(() => {
@@ -32,7 +32,12 @@ export default function ProfilePage({ isPopupOpen = false }: TProfilePage) {
   
   
   const handleSubmit = async (data: TEditFormSchema) => {
-    handleApiExceptions(async () => { await updateMemberProfile(data) });
+    setIsSubmitting(true);
+    await handleApiExceptions(async () => { 
+      await updateMemberProfile(data);  
+      setIsEditOpen(false);
+    });
+    setIsSubmitting(false);
   }
   
   // During SSR and initial client render, show a skeleton/loading state
@@ -118,7 +123,8 @@ export default function ProfilePage({ isPopupOpen = false }: TProfilePage) {
                       </CardDescription>
                     }
                   </DialogHeader>
-                  {member && <EditForm member={member} onSubmit={handleSubmit}/>}
+                  {(member && !isSubmitting) && <EditForm member={member} onSubmit={handleSubmit}/>}
+                  {(member && isSubmitting) && <LoadingSpinner />}
                 </DialogContent>
               </Dialog>
             </CardFooter>
