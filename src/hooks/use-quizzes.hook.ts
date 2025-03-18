@@ -3,7 +3,7 @@ import { EErrorMessage } from "@/enums";
 import { QuizzesService } from "@/lib/services";
 import { useDailyQuizzStore } from "@/store";
 import { useQuizzesStore } from "@/store/use-quizzes.store";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback,  useState } from "react";
 import toast from "react-hot-toast";
 
 export function useQuizzes() {
