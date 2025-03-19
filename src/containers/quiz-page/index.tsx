@@ -87,7 +87,7 @@ export default function QuizPage() {
                       <span className="bg-primary text-primary-foreground rounded-full w-6 h-6 flex items-center justify-center text-sm flex-shrink-0">
                         {index + 1}
                       </span>
-                      <span className="capitalize text-lg">{question.title}</span>
+                      <span className="text-lg">{question.title}</span>
                       <span className="text-muted-foreground text-sm ml-auto">
                         {question.score} {question.score === 1 ? 'point' : 'points'}
                       </span>
