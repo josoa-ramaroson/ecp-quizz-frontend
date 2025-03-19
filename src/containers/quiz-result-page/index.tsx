@@ -44,7 +44,16 @@ export default function QuizResultPage() {
       </div>
     );
   }
-  
+
+
+  if (!quizData) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <p className="text-gray-500">No quiz data available. Please try again later.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="p-6 max-w-3xl mx-auto relative">
       <div className="flex justify-between items-start">
