@@ -16,6 +16,7 @@ export function useAuth() {
         try {
             setIsLoading(true);
             setError(null);
+            credentials.pseudo = credentials.pseudo.trim();
             const accessToken = await AuthService.login(credentials);
             setAccessToken(accessToken);
             
