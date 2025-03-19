@@ -9,10 +9,11 @@ import { useParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils'; // Utility function for conditional class names
 import { Card } from '@/components/ui/card';
+import { LoadingSpinner } from '@/components/ui/loading-spinner';
 
 export default function QuizResultPage() {
   const { id } = useParams();
-  const { quizData } = useQuizData(id as string);
+  const { isLoading, quizData } = useQuizData(id as string);
   const [answers, setAnswers] = useState<Record<string, { id: string, text: string; isCorrect: boolean; isSelected: boolean }[]>>({});
 
   useEffect(() => {
@@ -36,6 +37,14 @@ export default function QuizResultPage() {
     }
   }, [quizData]);
 
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <LoadingSpinner />
+      </div>
+    );
+  }
+  
   return (
     <div className="p-6 max-w-3xl mx-auto relative">
       <div className="flex justify-between items-start">
@@ -50,7 +59,7 @@ export default function QuizResultPage() {
       </div>
       
       {!quizData?.isCompleted ? (
-        <Link href={`/quiz/${id}`} className="text-blue-500 underline">
+        <Link href={`/quiz/${id}`} className="text-blue-500 underline" >
           Take Quiz
         </Link>
       ) : (
