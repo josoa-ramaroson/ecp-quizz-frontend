@@ -1,7 +1,7 @@
 "use client"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { AtSignIcon, LucideFacebook } from "lucide-react"
+import { ArrowLeft, AtSignIcon, LucideFacebook } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTrigger } from "@/components/ui/dialog"
 import { DialogTitle } from "@radix-ui/react-dialog"
@@ -13,6 +13,7 @@ import { useMember } from "@/hooks"
 import { handleApiExceptions } from "@/lib/utils"
 import { useState, useEffect } from "react"
 import { usePersonalStats } from "@/hooks/use-personal-stats.hook"
+import Link from "next/link"
 
 type TProfilePage = {
   isPopupOpen?: boolean;
@@ -60,7 +61,16 @@ export default function ProfilePage({ isPopupOpen = false }: TProfilePage) {
         </div>
       ) : (
         <div className="grid gap-6 md:grid-cols-[1fr_2fr] max-h-[calc(100vh-6rem)]">
+          <div className="sm:hidden z-10 w-full flex justify-center items-center">
+            <Button variant="link" className="flex items-center gap-1 text-primary-700 hover:text-primary-900">
+              <Link href="/home" className="flex gap-">
+                <ArrowLeft className="h-4 w-4" />
+                <span>Back to home</span>
+              </Link>
+            </Button>
+          </div>
           <Card>
+
             <CardHeader className="flex flex-col items-center text-center">
               <Avatar className="h-24 w-24">
                 <AvatarFallback>{member.firstName.substring(0, 2)}</AvatarFallback>
@@ -171,7 +181,6 @@ export default function ProfilePage({ isPopupOpen = false }: TProfilePage) {
           </div>
         </div>
       )}
-      
     </div>
   )
 }
