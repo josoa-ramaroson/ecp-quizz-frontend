@@ -1,6 +1,6 @@
 "use client"
 import { Heading } from '@/components/ui';
-import { EHeading } from '@/enums';
+import { EHeading, EQuizStatus } from '@/enums';
 import { EQuestionType } from '@/enums/question-type.enum';
 import { useQuizData } from '@/hooks';
 import { Circle, Square } from 'lucide-react';
@@ -62,12 +62,19 @@ export default function QuizResultPage() {
           <p className="text-gray-500 mb-4">{quizData?.description}</p>
         </div>
         <div className="text-right">
-          <div className="font-semibold text-lg">Your score: {quizData?.totalScore} / {quizData?.maxScore}</div>
-          <div className="text-gray-400">Finished at: {quizData?.finishedAt}</div>
+          {
+            quizData?.status != EQuizStatus.CLOSED? (
+              <>
+              <div className="font-semibold text-lg">Your score: {quizData?.totalScore} / {quizData?.maxScore}</div>
+              <div className="text-gray-400">Finished at: {quizData?.finishedAt}</div>
+              </>
+            ) : 
+            <div className="font-semibold text-lg text-red-600">Missed</div>
+          }
         </div>
       </div>
       
-      {!quizData?.isCompleted ? (
+      {( quizData?.status != EQuizStatus.CLOSED && !quizData?.isCompleted) ? (
         <Link href={`/quiz/${id}`} className="text-blue-500 underline" >
           Take Quiz
         </Link>
